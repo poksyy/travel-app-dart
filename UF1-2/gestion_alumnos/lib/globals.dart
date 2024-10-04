@@ -30,9 +30,12 @@ List<Student> students = [
   student4
 ];
 
-Student student = Student('Vicente', 'Catalá Ruiz', '39988332D', 25, modules, 'repetidor');
-Student student1 = Student('José', 'Martínez López', '12345678A', 20, modules, 'no repetidor');
-Student student2 = Student('María', 'Gómez Pérez', '23456789B', 21, modules, 'repetidor');
-Student student3 = Student('Carlos', 'Hernández Torres', '34567890C', 22, modules, 'no repetidor');
-Student student4 = Student('Laura', 'Sánchez García', '45678901D', 23, modules, 'repetidor');
+Student student = Student('Vicente', 'Catala Ruiz', '39988332D', 25, modules, 'repetidor');
+Student student1 = Student('Jose', 'Martinez Lopez', '12345678A', 20, modules, 'no repetidor');
+Student student2 = Student('Maria', 'Gomez Perez', '23456789B', 21, modules, 'repetidor');
+Student student3 = Student('Carlos', 'Hernandez Torres', '34567890C', 22, modules, 'no repetidor');
+Student student4 = Student('Laura', 'Sanchez Garcia', '45678901D', 23, modules, 'repetidor');
 
+List<Student> getAll(){
+  return students;
+}
