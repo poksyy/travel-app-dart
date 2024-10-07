@@ -10,8 +10,6 @@ class Student {
 
   Student(this.name, this.surnames, this.dni, this.age, this.module, this.repeater);
 
-  set modules(List<Module> modules) {}
-
   @override
   String toString() {
     return '$name $surnames ($age) - $dni: ${module.toString()} ($repeater)';
