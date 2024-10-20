@@ -4,5 +4,6 @@ void main() {
   exercise2();
   exercise3();
   exercise4();
+  exercise5();
 }
 

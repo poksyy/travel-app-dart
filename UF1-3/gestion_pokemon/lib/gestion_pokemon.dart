@@ -48,8 +48,16 @@ void exercise4() {
   print("Water type:");
   print(listAllWaterPokemon());
   getPokemonWithWaterAbility();
+  printSeparation();
   deletePokemon();
+  printSeparation();
   updatePokemon();
+  
+}
+
+void exercise5() {
+  createPokemon();
+
 }
 
 Map<String, List<String>> groupPokemonByBerry() {
@@ -188,3 +196,47 @@ void updatePokemon() {
     print("No Pokémon found with the name $oldPokemonName.");
   }
 }
+
+void createPokemon() {
+  stdout.write("Enter the name of the new Pokémon: ");
+  String? pokemonName = stdin.readLineSync();
+
+  stdout.write("Enter the type of Pokémon (Fire/Water): ");
+  String? pokemonType = stdin.readLineSync()?.toLowerCase();
+
+  stdout.write("Enter the berry type for the Pokémon: ");
+  String? pokemonBerry = stdin.readLineSync();
+
+  stdout.write("Enter the height of the Pokémon: ");
+  String? heightInput = stdin.readLineSync();
+  double? pokemonHeight = double.tryParse(heightInput ?? '');
+
+  stdout.write("Enter the weight of the Pokémon: ");
+  String? weightInput = stdin.readLineSync();
+  double? pokemonWeight = double.tryParse(weightInput ?? '');
+
+  if (pokemonName == null || pokemonName.isEmpty || 
+      pokemonType == null || pokemonBerry == null ||
+      pokemonHeight == null || pokemonWeight == null) {
+    print("Invalid data provided. Please try again.");
+    return;
+  }
+
+  if (pokemonType == "fire") {
+    FirePokemon newPokemon = FirePokemon(pokemonName, pokemonHeight, pokemonWeight, pokemonBerry);
+    firePokemons.add(newPokemon);
+    print("Fire-type Pokémon $pokemonName has been created.");
+  } else if (pokemonType == "water") {
+    WaterPokemon newPokemon = WaterPokemon(pokemonName, pokemonHeight, pokemonWeight, pokemonBerry);
+    waterPokemons.add(newPokemon);
+    print("Water-type Pokémon $pokemonName has been created.");
+  } else {
+    print("Invalid Pokémon type. Must be either 'Fire' or 'Water'.");
+    return;
+  }
+
+  allPokemons.clear();
+  allPokemons.addAll(firePokemons);
+  allPokemons.addAll(waterPokemons);
+}
+
