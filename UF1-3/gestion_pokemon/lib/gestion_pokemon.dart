@@ -48,7 +48,6 @@ void exercise4() {
   print("Water type:");
   print(listAllWaterPokemon());
   getPokemonWithWaterAbility();
-  printSeparation();
   deletePokemon();
   printSeparation();
   updatePokemon();
@@ -198,6 +197,7 @@ void updatePokemon() {
 }
 
 void createPokemon() {
+  printSeparation();
   stdout.write("Enter the name of the new Pokémon: ");
   String? pokemonName = stdin.readLineSync();
 
