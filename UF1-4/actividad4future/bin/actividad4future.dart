@@ -50,7 +50,8 @@ Future<void> main(List<String> arguments) async {
       print("There are no inhabitants on the planet with ID: $planetId.");
     } else {
       for (People item in peoplePlanetList) {
-        "${item.getName()} with a height of ${item.getHeight()} and weight ${item.getMass()} has hair ${item.getHairColor()}, skin color ${item.getSkinColor()}, and eye color ${item.getEyeColor()}";
+        print(
+            "${item.getName()} with a height of ${item.getHeight()} and weight ${item.getMass()} has hair ${item.getHairColor()}, skin color ${item.getSkinColor()}, and eye color ${item.getEyeColor()}");
       }
     }
   } catch (error) {
