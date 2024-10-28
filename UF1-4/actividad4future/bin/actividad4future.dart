@@ -1,29 +1,62 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:actividad4future/people.dart';
 import 'package:actividad4future/planet.dart';
 import 'package:actividad4future/services.dart';
 
-//Clase principal como asíncrona
+// Main asynchronous class.
 Future<void> main(List<String> arguments) async {
-  // Listado de planetas
   List<Planet> planetList = [];
-
-  //Petición mediante un servicio
+  List<People> peopleList = [];
+  List<People> peoplePlanetList = [];
   Services service = Services();
 
-
-//Activaria una animación
-
-  service.getStarWarsPlanets().then((response) {
-    planetList = response;
-
-    //Tratamiento de datos de forma individual
+  try {
+    // Fetch and display planets.
+    planetList = await service.getStarWarsPlanets();
     for (Planet item in planetList) {
       print(
-          "El planeta ${item.getName()} tiene ${item.getDiameter()}Kms de diametro y gravedad: ${item.getGravity()} con un tiempo de rotación de ${item.getRotationPeriod()} y de orbita ${item.getOrbitalPeriod()}");
+          "The planet ${item.getName()} has a diameter of ${item.getDiameter()} km, gravity: ${item.getGravity()}, with a rotation period of ${item.getRotationPeriod()} and an orbital period of ${item.getOrbitalPeriod()}");
     }
 
-    //Desactivaría la animación.
-    
-  });
+    print("------------------------------------------------------------");
+
+    // Fetch and display people from a specific planet in the terminal.
+    stdout.write("Enter the planet number (ID) to check its inhabitants:");
+    String? planetIdInput = stdin.readLineSync();
+
+    // The input cannot be null or empty.
+    if (planetIdInput == null || planetIdInput.isEmpty) {
+      print("Invalid id.");
+      return;
+    }
+
+    // Parsing String to int
+    int planetId = int.tryParse(planetIdInput) ?? -1;
+
+    //Fetch all the people first.
+    peopleList = await service.getStarWarsPeople();
+
+    // Filter inhabitants by planet ID.
+    for (People person in peopleList) {
+      if (planetId == person.getNumberHomeworld()) {
+        peoplePlanetList.add(person);
+      }
+    }
+
+    // Display inhabitants of the specific planet.
+    if (peoplePlanetList.isEmpty) {
+      print("There are no inhabitants on the planet with ID: $planetId.");
+    } else {
+      for (People item in peoplePlanetList) {
+        "${item.getName()} with a height of ${item.getHeight()} and weight ${item.getMass()} has hair ${item.getHairColor()}, skin color ${item.getSkinColor()}, and eye color ${item.getEyeColor()}";
+      }
+    }
+  } catch (error) {
+    print("Error during execution: $error");
+  } finally {}
+
+  // Close connection.
+  service.closeConnection();
 }
