@@ -5,8 +5,9 @@ class Planet {
   final int diameter;
   final String climate;
   final String gravity;
+  final String url;
 
-  Planet(this.name, this.rotationPeriod, this.orbitalPeriod, this.diameter, this.climate ,this.gravity);
+  Planet(this.name, this.rotationPeriod, this.orbitalPeriod, this.diameter, this.climate ,this.gravity, this.url);
 
   String getName() {
     return name;
@@ -30,5 +31,9 @@ class Planet {
 
   String getGravity() {
     return gravity;
+  }
+
+  String getUrl() {
+    return url;
   }
 }

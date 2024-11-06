@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:actividad4future/people.dart';
 import 'package:actividad4future/planet.dart';
 import 'package:actividad4future/services.dart';
+import 'package:actividad4future/globals.dart';
 
 // Main asynchronous class.
 Future<void> main(List<String> arguments) async {
@@ -15,20 +16,23 @@ Future<void> main(List<String> arguments) async {
   try {
     // Fetch and display planets.
     planetList = await service.getStarWarsPlanets();
+    print("${ConsoleColors.yellow}List of planets:");
     for (Planet item in planetList) {
       print(
-          "The planet ${item.getName()} has a diameter of ${item.getDiameter()} km, gravity: ${item.getGravity()}, with a rotation period of ${item.getRotationPeriod()} and an orbital period of ${item.getOrbitalPeriod()}");
+          '${ConsoleColors.blue}The planet ${item.getName()} has a diameter of ${item.getDiameter()} km, gravity: ${item.getGravity()}, with a rotation period of ${item.getRotationPeriod()} and an orbital period of ${item.getOrbitalPeriod()}${ConsoleColors.reset}');
     }
 
-    print("------------------------------------------------------------");
+    print(
+        "${ConsoleColors.green}------------------------------------------------------------${ConsoleColors.reset}");
 
     // Fetch and display people from a specific planet in the terminal.
-    stdout.write("Enter the planet number (ID) to check its inhabitants:");
+    stdout.write(
+        "${ConsoleColors.yellow}Enter the planet number (ID) to check its inhabitants:${ConsoleColors.reset}");
     String? planetIdInput = stdin.readLineSync();
 
     // The input cannot be null or empty.
     if (planetIdInput == null || planetIdInput.isEmpty) {
-      print("Invalid id.");
+      print("${ConsoleColors.red}Invalid id.${ConsoleColors.reset}");
       return;
     }
 
@@ -47,17 +51,48 @@ Future<void> main(List<String> arguments) async {
 
     // Display inhabitants of the specific planet.
     if (peoplePlanetList.isEmpty) {
-      print("There are no inhabitants on the planet with ID: $planetId.");
+      print(
+          "${ConsoleColors.red}There are no inhabitants on the planet with ID: $planetId.${ConsoleColors.reset}");
     } else {
       for (People item in peoplePlanetList) {
         print(
-            "${item.getName()} with a height of ${item.getHeight()} and weight ${item.getMass()} has hair ${item.getHairColor()}, skin color ${item.getSkinColor()}, and eye color ${item.getEyeColor()}");
+            '${ConsoleColors.cyan}${item.getName()} with a height of ${item.getHeight()} and weight ${item.getMass()} has hair ${item.getHairColor()}, skin color ${item.getSkinColor()}, and eye color ${item.getEyeColor()}${ConsoleColors.reset}');
       }
     }
   } catch (error) {
-    print("Error during execution: $error");
+    print(
+        "${ConsoleColors.red}Error during execution: $error${ConsoleColors.reset}");
   } finally {}
 
-  // Close connection.
-  service.closeConnection();
+  print(
+      "${ConsoleColors.green}------------------------------------------------------------${ConsoleColors.reset}");
+
+  // Fetch and display people from a specific planet in the terminal.
+  stdout.write(
+      "${ConsoleColors.yellow}Enter the people name to check its homeworld:${ConsoleColors.reset}");
+  String? peopleNameInput = stdin.readLineSync();
+
+  // The input cannot be null or empty.
+  if (peopleNameInput == null || peopleNameInput.isEmpty) {
+    print("${ConsoleColors.red}Invalid name.${ConsoleColors.reset}");
+    return;
+  }
+
+  for (People person in peopleList) {
+    if (peopleNameInput == person.getName()) {
+      for (Planet item in planetList) {
+        if (person.getHomeworld() == item.url) {
+          print(
+              '${ConsoleColors.cyan}$peopleNameInput lives in the planet ${item.getName()} has a diameter of ${item.getDiameter()} km, gravity: ${item.getGravity()}, with a rotation period of ${item.getRotationPeriod()} and an orbital period of ${item.getOrbitalPeriod()}.${ConsoleColors.reset}');
+        }
+      }
+    }
+      print(
+      "${ConsoleColors.green}------------------------------------------------------------${ConsoleColors.reset}");
+
+
+    // Close connection.
+    service.closeConnection();
+  }
+  
 }

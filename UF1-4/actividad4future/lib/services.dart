@@ -50,7 +50,8 @@ class Services {
               value['diameter'],
             ),
             value['climate'],
-            value['gravity']
+            value['gravity'],
+            value['url']
             );
         planetsList.add(newPlanet);
       });
@@ -94,7 +95,7 @@ class Services {
     // Return people list.
     return peopleList;
   }
-  
+
   // Method to close the connection if it's not necessary anymore.
   void closeConnection() {
     getConnection().close();
