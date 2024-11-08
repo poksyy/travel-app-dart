@@ -1,16 +1,20 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:actividad4future/films.dart';
 import 'package:actividad4future/people.dart';
 import 'package:actividad4future/planet.dart';
 import 'package:actividad4future/services.dart';
 import 'package:actividad4future/globals.dart';
+import 'package:actividad4future/vehicles.dart';
 
 // Main asynchronous class.
 Future<void> main(List<String> arguments) async {
   List<Planet> planetList = [];
   List<People> peopleList = [];
+  List<Vehicles> vehiclesList = [];
   List<People> peoplePlanetList = [];
+  List<Films> filmsList = [];
   Services service = Services();
 
   try {
@@ -87,12 +91,40 @@ Future<void> main(List<String> arguments) async {
         }
       }
     }
-      print(
+  }
+  print(
       "${ConsoleColors.green}------------------------------------------------------------${ConsoleColors.reset}");
 
+  // Fetch and display movie from a specific vehicle in the terminal.
+  vehiclesList = await service.getStarWarsVehicles();
+  filmsList = await service.getStarWarsFilms();
 
-    // Close connection.
-    service.closeConnection();
+  stdout.write(
+      "${ConsoleColors.yellow}Enter the vehicle name to check its films:${ConsoleColors.reset}");
+  String? vehicleNameInput = stdin.readLineSync();
+
+  // The input cannot be null or empty.
+  if (vehicleNameInput == null || vehicleNameInput.isEmpty) {
+    print("${ConsoleColors.red}Invalid name.${ConsoleColors.reset}");
+    return;
   }
-  
+
+  for (Vehicles vehicle in vehiclesList) {
+    if (vehicleNameInput == vehicle.getName()) {
+      print(
+          "${ConsoleColors.cyan}Films found for vehicle ${vehicle.getName()}:${ConsoleColors.reset}");
+
+      for (String filmUrl in vehicle.getFilms()) {
+        for (Films film in filmsList) {
+          if (filmUrl == film.getUrl()) {
+            print(
+                "${ConsoleColors.cyan}Title: ${film.getTitle()}, Episode ID: ${film.getEpisodeId()}, Director: ${film.getDirector()}, Producer: ${film.getProducer()}, Release Date: ${film.getReleaseDate()}${ConsoleColors.reset}");
+          }
+        }
+      }
+    }
+  }
+
+  // Close connection.
+  service.closeConnection();
 }

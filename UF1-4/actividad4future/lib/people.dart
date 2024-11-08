@@ -7,17 +7,18 @@ class People {
   final String eyeColor;
   final String homeworld;
 
-  People(this.name, this.height, this.mass, this.hairColor, this.skinColor ,this.eyeColor, this.homeworld);
+  People(this.name, this.height, this.mass, this.hairColor, this.skinColor,
+      this.eyeColor, this.homeworld);
 
   String getName() {
     return name;
   }
 
-  int getHeight(){
+  int getHeight() {
     return height;
   }
 
-  int getMass(){
+  int getMass() {
     return mass;
   }
 
@@ -25,7 +26,7 @@ class People {
     return hairColor;
   }
 
-  String getSkinColor(){
+  String getSkinColor() {
     return skinColor;
   }
 
@@ -34,9 +35,9 @@ class People {
   }
 
   // Get the number from the homeworld link of the API.
-  int getNumberHomeworld (){
+  int getNumberHomeworld() {
     //https://swapi.dev/api/planets/#/ -> homeworld format
-    String homeworldNumberExtract = homeworld.replaceAll(RegExp(r'[^0-9]'),'');
+    String homeworldNumberExtract = homeworld.replaceAll(RegExp(r'[^0-9]'), '');
     int homeworldNumber = int.parse(homeworldNumberExtract);
     return homeworldNumber;
   }
