@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:actividad4future/films.dart';
+import 'package:actividad4future/planet.dart';
 import 'package:actividad4future/people.dart';
+import 'package:actividad4future/films.dart';
 import 'package:actividad4future/vehicles.dart';
 import 'package:http/retry.dart';
-import 'package:actividad4future/planet.dart';
 import 'package:http/http.dart' as http;
 
 class Services {
   // ignore: non_constant_identifier_names
-  final String STAR_WARS_API_URL = 'https://swapi.dev/api/';
+  static const String starWarsApiUrl = 'https://swapi.dev/api/';
   late RetryClient connection;
 
   Services() {
@@ -29,11 +29,11 @@ class Services {
   /// Fetch planets from the Star Wars API.
   Future<List<Planet>> getStarWarsPlanets() async {
     List<Planet> planetsList = [];
-    late String response;
+    late final String response;
     // API connection.
     try {
-      response = (await getConnection()
-          .read(Uri.parse('${STAR_WARS_API_URL}planets')));
+      response = await getConnection()
+          .read(Uri.parse('${starWarsApiUrl}planets'));
     } finally {
       // Handle the result.
       Map<String, dynamic> planets = jsonDecode(response);
@@ -58,6 +58,8 @@ class Services {
       });
     }
 
+    
+
     // Return planets list.
     return planetsList;
   }
@@ -69,7 +71,7 @@ class Services {
     // API connection.
     try {
       response =
-          (await getConnection().read(Uri.parse('${STAR_WARS_API_URL}people')));
+          (await getConnection().read(Uri.parse('${starWarsApiUrl}people')));
     } finally {
       // Handle the result.
       Map<String, dynamic> people = jsonDecode(response);
@@ -103,7 +105,7 @@ class Services {
     // API connection.
     try {
       response = (await getConnection()
-          .read(Uri.parse('${STAR_WARS_API_URL}vehicles')));
+          .read(Uri.parse('${starWarsApiUrl}vehicles')));
     } finally {
       // Handle the result.
       Map<String, dynamic> vehicles = jsonDecode(response);
@@ -135,7 +137,7 @@ class Services {
     // API connection.
     try {
       response =
-          (await getConnection().read(Uri.parse('${STAR_WARS_API_URL}films')));
+          (await getConnection().read(Uri.parse('${starWarsApiUrl}films')));
     } finally {
       // Handle the result.
       Map<String, dynamic> films = jsonDecode(response);

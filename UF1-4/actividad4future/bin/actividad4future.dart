@@ -43,6 +43,8 @@ Future<void> main(List<String> arguments) async {
     // Parsing String to int
     int planetId = int.tryParse(planetIdInput) ?? -1;
 
+    // Saving planet name
+
     //Fetch all the people first.
     peopleList = await service.getStarWarsPeople();
 
