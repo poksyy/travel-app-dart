@@ -7,14 +7,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController userController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
 void login() {
-  String user = emailController.text;
+  String user = userController.text;
   String password = passwordController.text;
 
-  if (user == "Usuario" && password == "12345") {
+  if (user == "Usuario" && password == "12345" || user == "Pau" && password == "12345") {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -22,16 +22,20 @@ void login() {
       ),
     );
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Successfully logged in!")
-      )
+      SnackBar(
+        content: const Text("Successfully logged in!"),
+        backgroundColor: Colors.green,
+      ),
     );
   } else {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Invalid credentials")),
+      SnackBar(
+        content: const Text("Invalid credentials"),
+        backgroundColor: Colors.red,
+      )
     );
   }
 }
-
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +61,9 @@ void login() {
               ),
             ),
             TextField(
-              controller: emailController,
+              controller: userController,
               decoration: const InputDecoration(
-                labelText: "Email",
+                labelText: "User",
                 border: OutlineInputBorder(),
               ),
             ),
