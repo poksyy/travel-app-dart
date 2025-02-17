@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:form_and_list/models/city.dart';
 import 'package:form_and_list/screens/city_details_screen.dart';
+import 'package:form_and_list/data/city_data.dart';
 
 class HomeScreen extends StatefulWidget {
   final String user;
@@ -15,37 +15,6 @@ class HomeScreenState extends State<HomeScreen> {
   void logout() {
     Navigator.pushReplacementNamed(context, '/login');
   }
-
-  List<City> cities = [
-    City(
-      name: 'Manila',
-      country: 'Philippines',
-      population: 1780148,
-      imagePath: 'assets/images/manila.jpg',
-      description: 'Manila, the capital of the Philippines, is a bustling metropolis known for its rich history and vibrant culture.',
-    ),
-    City(
-      name: 'Quebec',
-      country: 'Canada',
-      population: 531000,
-      imagePath: 'assets/images/quebec.png',
-      description: 'Quebec is a French-speaking province in Canada, famous for its stunning architecture and winter festivals.',
-    ),
-    City(
-      name: 'Mar del Plata',
-      country: 'Argentina',
-      population: 617000,
-      imagePath: 'assets/images/mar-de-plata.jpg',
-      description: 'Mar del Plata is a resort city in Argentina known for its beaches, fishing, and lively nightlife.',
-    ),
-    City(
-      name: 'Barcelona',
-      country: 'Spain',
-      population: 1620343,
-      imagePath: 'assets/images/barcelona.jpg',
-      description: 'Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.',
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +56,7 @@ class HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
+                // we use the imported data
                 itemCount: cities.length,
                 itemBuilder: (context, index) {
                   final city = cities[index];
