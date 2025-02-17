@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/routes/app_routes.dart';
+import 'package:form_and_list/config/login_config.dart';  // Importamos la configuración
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,34 +13,32 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = TextEditingController();
 
   void login() {
-  if (_formKey.currentState!.validate()) {
-    String user = userController.text;
-    String password = passwordController.text;
+    if (_formKey.currentState!.validate()) {
+      String user = userController.text;
+      String password = passwordController.text;
 
-    if (user == "user" && password == "pass12345" || user == "Pau" && password == "pass12345") {
-      Navigator.pushReplacementNamed(
-        context, 
-        AppRoutes.home, 
-        arguments: user,
-      );
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text("Successfully logged in!"),
-          backgroundColor: Colors.green,
-        ),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text("Invalid credentials"),
-          backgroundColor: Colors.red,
-        ),
-      );
+      if (LoginConfig.validUsers.containsKey(user) && LoginConfig.validUsers[user] == password) {
+        Navigator.pushReplacementNamed(
+          context, 
+          AppRoutes.home, 
+          arguments: user,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text("Successfully logged in!"),
+            backgroundColor: Colors.green,
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text("Invalid credentials"),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     }
   }
-}
-
-
 
   @override
   Widget build(BuildContext context) {

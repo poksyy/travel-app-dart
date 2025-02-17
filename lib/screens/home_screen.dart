@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/screens/city_details_screen.dart';
 import 'package:form_and_list/data/city_data.dart';
+import 'package:form_and_list/widget/city_item.dart';
 
 class HomeScreen extends StatefulWidget {
   final String user;
@@ -56,11 +57,11 @@ class HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                // we use the imported data
                 itemCount: cities.length,
                 itemBuilder: (context, index) {
                   final city = cities[index];
-                  return GestureDetector(
+                  return CityItem(
+                    city: city,
                     onTap: () async {
                       final deletedCity = await Navigator.push(
                         context,
@@ -68,65 +69,12 @@ class HomeScreenState extends State<HomeScreen> {
                           builder: (context) => CityDetailsScreen(city: city),
                         ),
                       );
-
                       if (deletedCity != null) {
                         setState(() {
                           cities.removeWhere((city) => city.name == deletedCity.name);
                         });
                       }
                     },
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10.0),
-                      padding: const EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0x4D9E9E9E),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Hero(
-                            tag: city.name,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                city.imagePath,
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 15),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  city.name,
-                                  style: Theme.of(context).textTheme.titleLarge,
-                                ),
-                                const SizedBox(height: 5),
-                                Text(
-                                  'Country: ${city.country}',
-                                  style: Theme.of(context).textTheme.bodyLarge,
-                                ),
-                                Text(
-                                  'Population: ${city.population}',
-                                  style: Theme.of(context).textTheme.bodyMedium,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   );
                 },
               ),

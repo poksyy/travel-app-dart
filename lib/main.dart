@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/theme/theme.dart';
-import 'package:form_and_list/routes/app_routes.dart';
+
+import 'config/route_config.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,8 +15,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      initialRoute: AppRoutes.splash,
-      routes: AppRoutes.routes,
+      initialRoute: '/splash',
+      onGenerateRoute: RouteConfig.onGenerateRoute,
     );
   }
 }
