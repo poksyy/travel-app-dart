@@ -30,5 +30,6 @@ final ThemeData appTheme = ThemeData(
   textTheme: const TextTheme(
     bodyLarge: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
     labelLarge: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+    titleLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
   ),
 );

@@ -13,10 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  void logout() {
-    Navigator.pushReplacementNamed(context, '/login');
-  }
-
   @override
   Widget build(BuildContext context) {
     final String user = widget.user;
@@ -25,7 +21,6 @@ class HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Home"),
         backgroundColor: Theme.of(context).primaryColor,
-        foregroundColor: Theme.of(context).appBarTheme.foregroundColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -77,17 +72,6 @@ class HomeScreenState extends State<HomeScreen> {
                     },
                   );
                 },
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                onPressed: logout,
-                style: Theme.of(context).elevatedButtonTheme.style,
-                child: const Text(
-                  "Log Out",
-                  style: TextStyle(fontSize: 18),
-                ),
               ),
             ),
           ],

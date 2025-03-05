@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (LoginConfig.validUsers.containsKey(user) && LoginConfig.validUsers[user] == password) {
         Navigator.pushReplacementNamed(
           context, 
-          AppRoutes.home, 
+          '/main',
           arguments: user,
         );
         ScaffoldMessenger.of(context).showSnackBar(
