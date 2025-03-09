@@ -1,0 +1,13 @@
+{
+  "availableFlights": "Vols Disponibles",
+  "monday": "Dilluns",
+  "tuesday": "Dimarts",
+  "wednesday": "Dimecres",
+  "thursday": "Dijous",
+  "friday": "Divendres",
+  "saturday": "Dissabte",
+  "sunday": "Diumenge",
+  "departure_city": "Ciutat de sortida",
+  "arrival_city": "Ciutat d'arribada",
+  "price": "Preu"
+}

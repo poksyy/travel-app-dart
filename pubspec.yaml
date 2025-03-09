@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_gen: 5.10.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  provider: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -17,5 +22,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
   assets:
     - assets/images/

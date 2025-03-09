@@ -1,0 +1,13 @@
+{
+  "availableFlights": "Available Flights",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "departure_city": "Departure City",
+  "arrival_city": "Arrival City",
+  "price": "Price"
+}

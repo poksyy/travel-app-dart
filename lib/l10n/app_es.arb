@@ -1,0 +1,13 @@
+{
+  "availableFlights": "Vuelos Disponibles",
+  "monday": "Lunes",
+  "tuesday": "Martes",
+  "wednesday": "Miércoles",
+  "thursday": "Jueves",
+  "friday": "Viernes",
+  "saturday": "Sábado",
+  "sunday": "Domingo",
+  "departure_city": "Ciudad de salida",
+  "arrival_city": "Ciudad de llegada",
+  "price": "Precio"
+}
