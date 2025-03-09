@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:form_and_list/config/locale_provider.dart';
+import 'package:form_and_list/l10n/app_localizations.dart';
 import 'package:form_and_list/models/city.dart';
+import 'package:provider/provider.dart';
 
 class CityDetailsScreen extends StatelessWidget {
   final City city;
@@ -8,10 +11,41 @@ class CityDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    final localeProvider = Provider.of<LocaleProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(city.name),
         backgroundColor: Theme.of(context).primaryColor,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: DropdownButton<Locale>(
+              value: localeProvider.locale,
+              icon: const Icon(Icons.language, color: Colors.white),
+              onChanged: (Locale? newLocale) {
+                if (newLocale != null) {
+                  localeProvider.setLocale(newLocale);
+                }
+              },
+              items: const [
+                DropdownMenuItem(
+                  value: Locale('en'),
+                  child: Text('English'),
+                ),
+                DropdownMenuItem(
+                  value: Locale('es'),
+                  child: Text('Español'),
+                ),
+                DropdownMenuItem(
+                  value: Locale('ca'),
+                  child: Text('Català'),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -38,7 +72,7 @@ class CityDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                'Country: ${city.country}',
+                '${localizations.philippines}',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               const SizedBox(height: 5),
@@ -53,7 +87,7 @@ class CityDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                city.description,
+                _getCityDescription(city.name, localizations),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 30),
@@ -100,5 +134,20 @@ class CityDetailsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _getCityDescription(String cityName, AppLocalizations localizations) {
+    switch (cityName) {
+      case 'Manila':
+        return localizations.manilaDescription;
+      case 'Quebec':
+        return localizations.quebecDescription;
+      case 'Mar del Plata':
+        return localizations.marDelPlataDescription;
+      case 'Barcelona':
+        return localizations.barcelonaDescription;
+      default:
+        return '';
+    }
   }
 }

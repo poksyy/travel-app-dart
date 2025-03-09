@@ -38,4 +38,40 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get price => 'Precio';
+
+  @override
+  String get manila => 'Manila';
+
+  @override
+  String get quebec => 'Quebec';
+
+  @override
+  String get marDelPlata => 'Mar del Plata';
+
+  @override
+  String get barcelona => 'Barcelona';
+
+  @override
+  String get philippines => 'Filipinas';
+
+  @override
+  String get canada => 'Canadá';
+
+  @override
+  String get argentina => 'Argentina';
+
+  @override
+  String get spain => 'España';
+
+  @override
+  String get manilaDescription => 'Manila, la capital de Filipinas, es una ciudad bulliciosa conocida por su rica historia y cultura vibrante.';
+
+  @override
+  String get quebecDescription => 'Quebec es una provincia de habla francesa en Canadá, famosa por su impresionante arquitectura y festivales de invierno.';
+
+  @override
+  String get marDelPlataDescription => 'Mar del Plata es una ciudad turística en Argentina conocida por sus playas, pesca y vida nocturna animada.';
+
+  @override
+  String get barcelonaDescription => 'Barcelona, una ciudad en España, es famosa por su arte, arquitectura y la icónica Sagrada Familia.';
 }

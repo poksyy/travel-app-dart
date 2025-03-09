@@ -162,6 +162,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Price'**
   String get price;
+
+  /// No description provided for @manila.
+  ///
+  /// In en, this message translates to:
+  /// **'Manila'**
+  String get manila;
+
+  /// No description provided for @quebec.
+  ///
+  /// In en, this message translates to:
+  /// **'Quebec'**
+  String get quebec;
+
+  /// No description provided for @marDelPlata.
+  ///
+  /// In en, this message translates to:
+  /// **'Mar del Plata'**
+  String get marDelPlata;
+
+  /// No description provided for @barcelona.
+  ///
+  /// In en, this message translates to:
+  /// **'Barcelona'**
+  String get barcelona;
+
+  /// No description provided for @philippines.
+  ///
+  /// In en, this message translates to:
+  /// **'Philippines'**
+  String get philippines;
+
+  /// No description provided for @canada.
+  ///
+  /// In en, this message translates to:
+  /// **'Canada'**
+  String get canada;
+
+  /// No description provided for @argentina.
+  ///
+  /// In en, this message translates to:
+  /// **'Argentina'**
+  String get argentina;
+
+  /// No description provided for @spain.
+  ///
+  /// In en, this message translates to:
+  /// **'Spain'**
+  String get spain;
+
+  /// No description provided for @manilaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Manila, the capital of the Philippines, is a bustling metropolis known for its rich history and vibrant culture.'**
+  String get manilaDescription;
+
+  /// No description provided for @quebecDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Quebec is a French-speaking province in Canada, famous for its stunning architecture and winter festivals.'**
+  String get quebecDescription;
+
+  /// No description provided for @marDelPlataDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Mar del Plata is a resort city in Argentina known for its beaches, fishing, and lively nightlife.'**
+  String get marDelPlataDescription;
+
+  /// No description provided for @barcelonaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.'**
+  String get barcelonaDescription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

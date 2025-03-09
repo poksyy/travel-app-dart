@@ -9,5 +9,17 @@
   "sunday": "Sunday",
   "departure_city": "Departure City",
   "arrival_city": "Arrival City",
-  "price": "Price"
+  "price": "Price",
+  "manila": "Manila",
+  "quebec": "Quebec",
+  "marDelPlata": "Mar del Plata",
+  "barcelona": "Barcelona",
+  "philippines": "Philippines",
+  "canada": "Canada",
+  "argentina": "Argentina",
+  "spain": "Spain",
+  "manilaDescription": "Manila, the capital of the Philippines, is a bustling metropolis known for its rich history and vibrant culture.",
+  "quebecDescription": "Quebec is a French-speaking province in Canada, famous for its stunning architecture and winter festivals.",
+  "marDelPlataDescription": "Mar del Plata is a resort city in Argentina known for its beaches, fishing, and lively nightlife.",
+  "barcelonaDescription": "Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia."
 }
