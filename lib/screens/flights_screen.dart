@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/data/flights_data.dart';
 import 'package:form_and_list/models/flight.dart';
+import 'package:form_and_list/screens/flight_details_screen.dart';
 
 class FlightScreen extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class FlightScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vuelos Disponibles'),
+        title: const Text('Available Flights'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: ListView.builder(
@@ -31,7 +32,7 @@ class FlightScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 16.0, bottom: 8.0, top: 16.0),  // Espacio superior agregado
+                  padding: const EdgeInsets.only(left: 16.0, bottom: 8.0, top: 16.0),
                   child: Text(
                     company,
                     style: TextStyle(
@@ -73,6 +74,15 @@ class FlightScreen extends StatelessWidget {
                             ),
                           ],
                         ),
+                        onTap: () {
+                          // Navigate to FlightDetailsScreen when tapped
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FlightDetailsScreen(flight: flight),
+                            ),
+                          );
+                        },
                       ),
                     );
                   }).toList(),

@@ -4,7 +4,7 @@ class FlightsData {
   static final List<Flight> flights = [
     Flight(
       company: 'AeroSky Airlines',
-      day: 'Lunes',
+      day: 'Monday',
       hour: '10:00 AM',
       departureCity: 'Barcelona',
       arrivalCity: 'Manila',
@@ -12,7 +12,7 @@ class FlightsData {
     ),
     Flight(
       company: 'AeroSky Airlines',
-      day: 'Martes',
+      day: 'Tuesday',
       hour: '12:30 PM',
       departureCity: 'Barcelona',
       arrivalCity: 'Quebec',
@@ -20,7 +20,7 @@ class FlightsData {
     ),
     Flight(
       company: 'AeroSky Airlines',
-      day: 'Miércoles',
+      day: 'Wednesday',
       hour: '8:00 AM',
       departureCity: 'Barcelona',
       arrivalCity: 'Mar de Plata',
@@ -28,7 +28,7 @@ class FlightsData {
     ),
     Flight(
       company: 'BlueWings Aviation',
-      day: 'Jueves',
+      day: 'Thursday',
       hour: '9:00 AM',
       departureCity: 'Barcelona',
       arrivalCity: 'Manila',
@@ -36,7 +36,7 @@ class FlightsData {
     ),
     Flight(
       company: 'BlueWings Aviation',
-      day: 'Viernes',
+      day: 'Friday',
       hour: '2:00 PM',
       departureCity: 'Barcelona',
       arrivalCity: 'Quebec',
@@ -44,7 +44,7 @@ class FlightsData {
     ),
     Flight(
       company: 'BlueWings Aviation',
-      day: 'Sábado',
+      day: 'Saturday',
       hour: '6:00 PM',
       departureCity: 'Barcelona',
       arrivalCity: 'Mar de Plata',
