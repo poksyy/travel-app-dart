@@ -33,7 +33,7 @@ class FlightItem extends StatelessWidget {
             children: [
               Text('${flight.day} - ${flight.hour}', style: const TextStyle(fontSize: 14, color: Colors.black)),
               Text(
-                '\$${flight.price.toStringAsFixed(2)}',
+                '${flight.price.toStringAsFixed(2)}€',
                 style: TextStyle(
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold,
