@@ -19,6 +19,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get home => 'Inici';
 
   @override
+  String get fligths => 'Vols';
+
+  @override
+  String get profile => 'Perfil';
+
+  @override
   String get welcome => 'Benvingut';
 
   @override

@@ -121,6 +121,18 @@ abstract class AppLocalizations {
   /// **'Home'**
   String get home;
 
+  /// No description provided for @fligths.
+  ///
+  /// In en, this message translates to:
+  /// **'Flights'**
+  String get fligths;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
   /// No description provided for @welcome.
   ///
   /// In en, this message translates to:
