@@ -1,3 +1,5 @@
-# form_and_list
+# Travel App
 
-A new Flutter project.
+A Dart practice application with various travel functionalities, showcasing cities and flights.
+
+WIP
