@@ -3,6 +3,7 @@ import 'package:form_and_list/l10n/app_localizations.dart';
 import 'package:form_and_list/data/flights_data.dart';
 import 'package:form_and_list/models/flight.dart';
 import 'package:form_and_list/screens/flight_details_screen.dart';
+import 'package:form_and_list/widget/flight_item.dart';
 import 'package:form_and_list/widget/language_selector.dart';
 
 class FlightScreen extends StatelessWidget {
@@ -45,45 +46,16 @@ class FlightScreen extends StatelessWidget {
                 ),
                 Column(
                   children: companyFlights.map((flight) {
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 12),
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: ListTile(
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                        title: Text(
-                          '${flight.departureCity} → ${flight.arrivalCity}',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                    return FlightItem(
+                      flight: flight,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FlightDetailsScreen(flight: flight),
                           ),
-                        ),
-                        subtitle: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('${flight.day} - ${flight.hour}', style: const TextStyle(fontSize: 14, color: Colors.black)),
-                            Text(
-                              '\$${flight.price.toStringAsFixed(2)}',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                            ),
-                          ],
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FlightDetailsScreen(flight: flight),
-                            ),
-                          );
-                        },
-                      ),
+                        );
+                      },
                     );
                   }).toList(),
                 ),
