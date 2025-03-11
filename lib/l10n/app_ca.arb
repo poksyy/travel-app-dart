@@ -39,6 +39,7 @@
   "manilaDescription": "Manila, la capital de Filipines, és una ciutat bulliciosa coneguda per la seva rica història i cultura vibrant.",
   "quebecDescription": "Quebec és una província de parla francesa al Canadà, famosa per la seva impressionant arquitectura i els festivals d'hivern.",
   "marDelPlataDescription": "Mar del Plata és una ciutat turística a l'Argentina coneguda per les seves platges, pesca i vida nocturna animada.",
-  "barcelonaDescription": "Barcelona, una ciutat a Espanya, és coneguda pel seu art, arquitectura i la icònica Sagrada Família."
+  "barcelonaDescription": "Barcelona, una ciutat a Espanya, és coneguda pel seu art, arquitectura i la icònica Sagrada Família.",
+  "logout" : "Tancar la sessió"
 }
 

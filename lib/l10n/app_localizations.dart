@@ -342,6 +342,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.'**
   String get barcelonaDescription;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get logout;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

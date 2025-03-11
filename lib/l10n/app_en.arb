@@ -39,5 +39,6 @@
   "manilaDescription": "Manila, the capital of the Philippines, is a bustling metropolis known for its rich history and vibrant culture.",
   "quebecDescription": "Quebec is a French-speaking province in Canada, famous for its stunning architecture and winter festivals.",
   "marDelPlataDescription": "Mar del Plata is a resort city in Argentina known for its beaches, fishing, and lively nightlife.",
-  "barcelonaDescription": "Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia."
+  "barcelonaDescription": "Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.",
+  "logout" : "Log out"
 }

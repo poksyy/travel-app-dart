@@ -128,4 +128,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get barcelonaDescription => 'Barcelona, una ciutat a Espanya, és coneguda pel seu art, arquitectura i la icònica Sagrada Família.';
+
+  @override
+  String get logout => 'Tancar la sessió';
 }

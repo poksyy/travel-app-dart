@@ -128,4 +128,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get barcelonaDescription => 'Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.';
+
+  @override
+  String get logout => 'Log out';
 }

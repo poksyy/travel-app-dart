@@ -39,5 +39,6 @@
   "manilaDescription": "Manila, la capital de Filipinas, es una ciudad bulliciosa conocida por su rica historia y cultura vibrante.",
   "quebecDescription": "Quebec es una provincia de habla francesa en Canadá, famosa por su impresionante arquitectura y festivales de invierno.",
   "marDelPlataDescription": "Mar del Plata es una ciudad turística en Argentina conocida por sus playas, pesca y vida nocturna animada.",
-  "barcelonaDescription": "Barcelona, una ciudad en España, es famosa por su arte, arquitectura y la icónica Sagrada Familia."
+  "barcelonaDescription": "Barcelona, una ciudad en España, es famosa por su arte, arquitectura y la icónica Sagrada Familia.",
+  "logout" : "Cerrar sesión"
 }
