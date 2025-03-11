@@ -73,6 +73,18 @@ class AppLocalizationsCa extends AppLocalizations {
   String get sunday => 'Diumenge';
 
   @override
+  String get flightDetails => 'Detalls del vol';
+
+  @override
+  String get airline => 'Aerolinea';
+
+  @override
+  String get day => 'Dia';
+
+  @override
+  String get time => 'Hora';
+
+  @override
   String get departure_city => 'Ciutat de sortida';
 
   @override

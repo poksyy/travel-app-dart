@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/models/flight.dart';
+import 'package:form_and_list/l10n/app_localizations.dart';
 
 class FlightDetailsScreen extends StatelessWidget {
   final Flight flight;
@@ -8,6 +9,8 @@ class FlightDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('${flight.company} - ${flight.departureCity} → ${flight.arrivalCity}'),
@@ -19,21 +22,21 @@ class FlightDetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Flight Details',
+              localizations.flightDetails,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 16),
-            Text('Airline: ${flight.company}', style: TextStyle(fontSize: 18)),
+            Text('${localizations.airline}: ${flight.company}', style: TextStyle(fontSize: 18)),
             SizedBox(height: 8),
-            Text('Day: ${flight.day}', style: TextStyle(fontSize: 18)),
+            Text('${localizations.day}: ${flight.day}', style: TextStyle(fontSize: 18)),
             SizedBox(height: 8),
-            Text('Time: ${flight.hour}', style: TextStyle(fontSize: 18)),
+            Text('${localizations.time}: ${flight.hour}', style: TextStyle(fontSize: 18)),
             SizedBox(height: 8),
-            Text('Departure City: ${flight.departureCity}', style: TextStyle(fontSize: 18)),
+            Text('${localizations.departure_city}: ${flight.departureCity}', style: TextStyle(fontSize: 18)),
             SizedBox(height: 8),
-            Text('Arrival City: ${flight.arrivalCity}', style: TextStyle(fontSize: 18)),
+            Text('${localizations.arrival_city}: ${flight.arrivalCity}', style: TextStyle(fontSize: 18)),
             SizedBox(height: 8),
-            Text('Price: \$${flight.price.toStringAsFixed(2)}', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text('${localizations.price}: ${flight.price.toStringAsFixed(2)}€', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ],
         ),
       ),

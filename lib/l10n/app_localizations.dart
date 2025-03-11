@@ -229,6 +229,30 @@ abstract class AppLocalizations {
   /// **'Sunday'**
   String get sunday;
 
+  /// No description provided for @flightDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Flight details'**
+  String get flightDetails;
+
+  /// No description provided for @airline.
+  ///
+  /// In en, this message translates to:
+  /// **'Airline'**
+  String get airline;
+
+  /// No description provided for @day.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get day;
+
+  /// No description provided for @time.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get time;
+
   /// No description provided for @departure_city.
   ///
   /// In en, this message translates to:

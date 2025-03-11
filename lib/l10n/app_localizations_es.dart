@@ -73,6 +73,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String get sunday => 'Domingo';
 
   @override
+  String get flightDetails => 'Detalles del vuelo';
+
+  @override
+  String get airline => 'Aerolinea';
+
+  @override
+  String get day => 'Día';
+
+  @override
+  String get time => 'Hora';
+
+  @override
   String get departure_city => 'Ciudad de salida';
 
   @override
