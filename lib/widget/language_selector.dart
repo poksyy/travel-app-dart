@@ -9,25 +9,31 @@ class LanguageSelector extends StatelessWidget {
     final localeProvider = Provider.of<LocaleProvider>(context);
     final localizations = AppLocalizations.of(context)!;
 
-    return PopupMenuButton<String>(
-      onSelected: (value) {
-        localeProvider.changeLocale(value);
-      },
-      itemBuilder: (BuildContext context) {
-        return [
-          PopupMenuItem(
-            value: 'en',
-            child: Text(localizations.english),
-          ),
-          PopupMenuItem(
-            value: 'es',
-            child: Text(localizations.spanish),
-          ),
-          PopupMenuItem(
-            value: 'ca',
-            child: Text(localizations.catalan),
-          ),
-        ];
+    return IconButton(
+      icon: const Icon(Icons.language),
+      onPressed: () {
+        showMenu(
+          context: context,
+          position: RelativeRect.fromLTRB(100, 50, 0, 0),
+          items: [
+            PopupMenuItem(
+              value: 'en',
+              child: Text(localizations.english),
+            ),
+            PopupMenuItem(
+              value: 'es',
+              child: Text(localizations.spanish),
+            ),
+            PopupMenuItem(
+              value: 'ca',
+              child: Text(localizations.catalan),
+            ),
+          ],
+        ).then((value) {
+          if (value != null) {
+            localeProvider.changeLocale(value);
+          }
+        });
       },
     );
   }
