@@ -3,13 +3,11 @@ import 'package:form_and_list/l10n/app_localizations.dart';
 import 'package:form_and_list/data/flights_data.dart';
 import 'package:form_and_list/models/flight.dart';
 import 'package:form_and_list/screens/flight_details_screen.dart';
-import 'package:provider/provider.dart';
-import 'package:form_and_list/config/locale_provider.dart';
+import 'package:form_and_list/widget/language_selector.dart';
 
 class FlightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final localeProvider = Provider.of<LocaleProvider>(context);
     final localizations = AppLocalizations.of(context)!;
 
     final Map<String, List<Flight>> groupedFlights = {};
@@ -21,28 +19,7 @@ class FlightScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(localizations.availableFlights),
         backgroundColor: Theme.of(context).primaryColor,
-        actions: [
-          PopupMenuButton<Locale>(
-            onSelected: (Locale locale) {
-              localeProvider.setLocale(locale);
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: const Locale('en'),
-                child: Text('English'),
-              ),
-              PopupMenuItem(
-                value: const Locale('es'),
-                child: Text('Español'),
-              ),
-              PopupMenuItem(
-                value: const Locale('ca'),
-                child: Text('Català'),
-              ),
-            ],
-            icon: const Icon(Icons.language),
-          ),
-        ],
+        actions: [LanguageSelector()],
       ),
       body: ListView.builder(
         itemCount: groupedFlights.length,

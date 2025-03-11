@@ -1,32 +1,38 @@
+import 'package:flutter/material.dart';
 import '../models/city.dart';
+import '../l10n/app_localizations.dart';
 
-final List<City> cities = [
-  City(
-    name: 'Manila',
-    country: 'Philippines',
-    population: 1780148,
-    imagePath: 'assets/images/manila.jpg',
-    description: 'Manila, the capital of the Philippines, is a bustling metropolis known for its rich history and vibrant culture.',
-  ),
-  City(
-    name: 'Quebec',
-    country: 'Canada',
-    population: 531000,
-    imagePath: 'assets/images/quebec.png',
-    description: 'Quebec is a French-speaking province in Canada, famous for its stunning architecture and winter festivals.',
-  ),
-  City(
-    name: 'Mar del Plata',
-    country: 'Argentina',
-    population: 617000,
-    imagePath: 'assets/images/mar-de-plata.jpg',
-    description: 'Mar del Plata is a resort city in Argentina known for its beaches, fishing, and lively nightlife.',
-  ),
-  City(
-    name: 'Barcelona',
-    country: 'Spain',
-    population: 1620343,
-    imagePath: 'assets/images/barcelona.jpg',
-    description: 'Barcelona, a city in Spain, is renowned for its art, architecture, and the iconic Sagrada Familia.',
-  ),
-];
+List<City> getCities(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
+
+  return [
+    City(
+      name: 'Manila',
+      country: localizations.philippines,
+      population: 1780148,
+      imagePath: 'assets/images/manila.jpg',
+      description: localizations.manilaDescription,
+    ),
+    City(
+      name: 'Quebec',
+      country: localizations.canada,
+      population: 531000,
+      imagePath: 'assets/images/quebec.png',
+      description: localizations.quebecDescription,
+    ),
+    City(
+      name: 'Mar del Plata',
+      country: localizations.argentina,
+      population: 617000,
+      imagePath: 'assets/images/mar-de-plata.jpg',
+      description: localizations.marDelPlataDescription,
+    ),
+    City(
+      name: 'Barcelona',
+      country: localizations.spain,
+      population: 1620343,
+      imagePath: 'assets/images/barcelona.jpg',
+      description: localizations.barcelonaDescription,
+    ),
+  ];
+}

@@ -7,6 +7,42 @@ class AppLocalizationsCa extends AppLocalizations {
   AppLocalizationsCa([String locale = 'ca']) : super(locale);
 
   @override
+  String get spanish => 'Castellà';
+
+  @override
+  String get english => 'Anglés';
+
+  @override
+  String get catalan => 'Català';
+
+  @override
+  String get home => 'Inici';
+
+  @override
+  String get welcome => 'Benvingut';
+
+  @override
+  String get country => 'País';
+
+  @override
+  String get population => 'Població';
+
+  @override
+  String get description => 'Descripció';
+
+  @override
+  String get confirmDeletion => 'Confirmar eliminació';
+
+  @override
+  String get deleteCityQuestion => 'Segur que vols eliminar aquesta ciutat?';
+
+  @override
+  String get cancel => 'Cancel·lar';
+
+  @override
+  String get delete => 'Eliminar';
+
+  @override
   String get availableFlights => 'Vols Disponibles';
 
   @override

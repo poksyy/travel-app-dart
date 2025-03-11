@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_and_list/models/city.dart';
+import 'package:form_and_list/l10n/app_localizations.dart';
 
 class CityItem extends StatelessWidget {
   final City city;
@@ -9,6 +10,8 @@ class CityItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -50,11 +53,11 @@ class CityItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    'Country: ${city.country}',
+                    '${localizations.country}: ${city.country}',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   Text(
-                    'Population: ${city.population}',
+                    '${localizations.population}: ${city.population}',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

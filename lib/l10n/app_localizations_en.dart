@@ -7,6 +7,42 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get spanish => 'Spanish';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get catalan => 'Catalan';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get welcome => 'Welcome';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get population => 'Population';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get confirmDeletion => 'Confirm Deletion';
+
+  @override
+  String get deleteCityQuestion => 'Are you sure you want to delete this city?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
   String get availableFlights => 'Available Flights';
 
   @override

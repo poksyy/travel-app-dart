@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:form_and_list/routes/app_routes.dart';
-import 'package:form_and_list/config/login_config.dart';  // Importamos la configuración
+import 'package:form_and_list/config/login_config.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
